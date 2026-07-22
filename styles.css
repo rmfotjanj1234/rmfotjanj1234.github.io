@@ -55,12 +55,28 @@ h2 { font-size: clamp(2.4rem, 5vw, 5rem); margin-bottom: 2rem; }
 .work-card h3 { font-size: clamp(1.7rem, 3vw, 2.8rem); letter-spacing: -.06em; margin: auto 0 .5rem; }
 .work-card p:not(.card-index) { max-width: 16rem; }
 .card-tag { margin-top: 1rem; opacity: .68; }
-.profile-strip, .game-placeholder { border-top: 1px solid var(--line); display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; margin-top: 8rem; padding-bottom: 6rem; padding-top: 3rem; }
+.profile-strip, .contact-section, .game-placeholder { border-top: 1px solid var(--line); display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; margin-top: 8rem; padding-bottom: 6rem; padding-top: 3rem; }
 .profile-copy { align-self: end; max-width: 25rem; }
 .muted { color: var(--muted); font-size: .8rem; }
 .game-placeholder { align-items: end; background: #e9e1d4; border: 0; border-radius: 1.5rem; margin-bottom: 3rem; padding-bottom: 3rem; padding-top: 3rem; }
 .game-placeholder h2 { margin-bottom: 1rem; }
+.game-panel { display: grid; gap: .8rem; }
+.game-scoreboard { display: flex; gap: 1rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.game-scoreboard strong { color: var(--accent); font-size: 1rem; }
+.game-board { background: #26251f; border: .5rem solid #26251f; border-radius: 1rem; display: grid; gap: 2px; grid-template-columns: repeat(20, 1fr); max-width: 34rem; min-height: 15rem; overflow: hidden; padding: 2px; }
+.game-cell { aspect-ratio: 1; background: #3d3b31; border-radius: 3px; }
+.game-cell--worm { background: #ff8b68; border-radius: 45%; }
+.game-cell--worm-head { background: #ffcf5b; border-radius: 48%; }
+.game-cell--food { background: #b9e6d3; border-radius: 50%; transform: scale(.72); }
 .game-status { border: 1px dashed var(--line); border-radius: 999px; color: var(--muted); font-size: .8rem; padding: 1rem 1.25rem; text-align: center; }
+.game-controls { display: flex; flex-wrap: wrap; gap: .5rem; }
+.game-controls button { background: var(--ink); border: 0; border-radius: 999px; color: var(--paper); cursor: pointer; font: inherit; font-size: .72rem; padding: .7rem 1rem; }
+.game-controls button:hover, .game-controls button:focus-visible { background: var(--accent); }
+.direction-controls { display: grid; gap: .35rem; justify-items: center; }
+.direction-controls div { display: flex; gap: .35rem; }
+.direction-controls button { background: var(--paper); border: 1px solid var(--line); border-radius: .7rem; color: var(--ink); cursor: pointer; font-size: 1rem; min-height: 2.75rem; min-width: 2.75rem; touch-action: manipulation; }
+.direction-controls button:hover, .direction-controls button:focus-visible { border-color: var(--accent); color: var(--accent); }
+.game-hint { color: var(--muted); font-size: .75rem; margin: 0; }
 .site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding-bottom: 2rem; padding-top: 2rem; }
 .site-footer p { color: var(--muted); font-size: .8rem; }
 
@@ -70,8 +86,9 @@ h2 { font-size: clamp(2.4rem, 5vw, 5rem); margin-bottom: 2rem; }
   nav a { font-size: .65rem; }
   .hero { min-height: 75vh; padding-bottom: 4rem; padding-top: 5rem; }
   .section-heading, .site-footer { align-items: flex-start; flex-direction: column; }
-  .work-grid, .profile-strip, .game-placeholder { grid-template-columns: 1fr; }
+  .work-grid, .profile-strip, .contact-section, .game-placeholder { grid-template-columns: 1fr; }
   .work-card { min-height: 16rem; }
-  .profile-strip, .game-placeholder { margin-top: 5rem; }
+  .profile-strip, .contact-section, .game-placeholder { margin-top: 5rem; }
   .game-status { text-align: left; }
+  .game-board { min-height: 11rem; }
 }
