@@ -1,0 +1,77 @@
+:root {
+  --ink: #24231f;
+  --muted: #76736b;
+  --paper: #f8f6f1;
+  --line: rgba(36, 35, 31, .14);
+  --accent: #ff6b4a;
+  --space: clamp(1.25rem, 3vw, 3rem);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; line-height: 1.5; }
+a { color: inherit; }
+
+.site-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem var(--space);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { font-size: 1.2rem; font-weight: 800; letter-spacing: -.08em; text-decoration: none; }
+.brand span { color: var(--accent); }
+nav { display: flex; gap: clamp(1rem, 3vw, 2.5rem); }
+nav a, .text-link { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+nav a:hover, nav a:focus-visible, .text-link:hover, .text-link:focus-visible { color: var(--accent); }
+
+.section-shell { margin: 0 auto; max-width: 1180px; padding-left: var(--space); padding-right: var(--space); }
+.hero { min-height: min(720px, 82vh); padding-bottom: 7rem; padding-top: 7rem; }
+.eyebrow { color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .14em; margin: 0 0 1.5rem; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { letter-spacing: -.07em; line-height: .96; }
+h1 { font-size: clamp(3.5rem, 10vw, 8.5rem); margin-bottom: 2rem; max-width: 900px; }
+h1 em { color: var(--accent); font-family: Georgia, serif; font-weight: 400; }
+h2 { font-size: clamp(2.4rem, 5vw, 5rem); margin-bottom: 2rem; }
+.intro { color: var(--muted); max-width: 31rem; }
+.text-link { border-bottom: 1px solid currentColor; display: inline-block; margin-top: 1.5rem; padding-bottom: .35rem; }
+.section-heading { align-items: end; display: flex; justify-content: space-between; }
+.work-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+.work-card { border-radius: 1.5rem; display: flex; flex-direction: column; min-height: 21rem; padding: 1.5rem; }
+.work-card--sunset { background: #ffc7a9; }
+.work-card--mint { background: #b9e6d3; }
+.work-card--lilac { background: #d9c9f3; }
+.card-index, .card-tag { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+.card-index { opacity: .62; }
+.work-card h3 { font-size: clamp(1.7rem, 3vw, 2.8rem); letter-spacing: -.06em; margin: auto 0 .5rem; }
+.work-card p:not(.card-index) { max-width: 16rem; }
+.card-tag { margin-top: 1rem; opacity: .68; }
+.profile-strip, .game-placeholder { border-top: 1px solid var(--line); display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; margin-top: 8rem; padding-bottom: 6rem; padding-top: 3rem; }
+.profile-copy { align-self: end; max-width: 25rem; }
+.muted { color: var(--muted); font-size: .8rem; }
+.game-placeholder { align-items: end; background: #e9e1d4; border: 0; border-radius: 1.5rem; margin-bottom: 3rem; padding-bottom: 3rem; padding-top: 3rem; }
+.game-placeholder h2 { margin-bottom: 1rem; }
+.game-status { border: 1px dashed var(--line); border-radius: 999px; color: var(--muted); font-size: .8rem; padding: 1rem 1.25rem; text-align: center; }
+.site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding-bottom: 2rem; padding-top: 2rem; }
+.site-footer p { color: var(--muted); font-size: .8rem; }
+
+@media (max-width: 700px) {
+  .site-header { align-items: flex-start; }
+  nav { gap: 1rem; }
+  nav a { font-size: .65rem; }
+  .hero { min-height: 75vh; padding-bottom: 4rem; padding-top: 5rem; }
+  .section-heading, .site-footer { align-items: flex-start; flex-direction: column; }
+  .work-grid, .profile-strip, .game-placeholder { grid-template-columns: 1fr; }
+  .work-card { min-height: 16rem; }
+  .profile-strip, .game-placeholder { margin-top: 5rem; }
+  .game-status { text-align: left; }
+}
