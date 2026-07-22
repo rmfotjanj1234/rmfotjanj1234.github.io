@@ -23,40 +23,45 @@
 
     <main id="top">
       <section id="about" class="hero section-shell" aria-labelledby="intro-title">
+        <div class="profile-card" data-reveal>
+          <span class="profile-avatar" aria-hidden="true">CJ</span>
+          <div><strong>최정인</strong><span>@choi.jeongin · software developer</span></div>
+          <span class="profile-badge">available for ideas</span>
+        </div>
         <p class="eyebrow">Software Developer · Building with curiosity</p>
         <h1 id="intro-title">Ideas become<br><em>useful moments.</em></h1>
         <p class="intro">사용자 경험을 코드로 구현하는 가상의 SW 개발자 프로필입니다. 작은 디테일을 쌓아 오래 쓰이는 디지털 경험을 만듭니다.</p>
-        <a class="text-link" href="#work">작업 둘러보기 <span aria-hidden="true">↘</span></a>
+        <a class="text-link" href="#projects">작업 둘러보기 <span aria-hidden="true">↘</span></a>
       </section>
 
-      <section id="projects" class="section-shell" aria-labelledby="work-title">
+      <section id="projects" class="section-shell" aria-labelledby="work-title" data-reveal>
         <div class="section-heading">
           <p class="eyebrow">Selected work</p>
           <h2 id="work-title">Making things<br>feel simple.</h2>
         </div>
         <div class="work-grid">
-          <article class="work-card work-card--sunset">
-            <p class="card-index">01 / Product UI</p>
+          <article class="work-card work-card--sunset" data-reveal>
+            <p class="card-index">01 / Fictional case study</p>
             <h3>Orbit Notes</h3>
-            <p>복잡한 정보를 차분하게 정리하는 협업 도구 콘셉트.</p>
-            <span class="card-tag">HTML · CSS · JS</span>
+            <p>회의 기록이 흩어지는 문제를 해결하기 위해 검색·요약·협업 흐름을 한 화면으로 설계한 가상 제품입니다.</p>
+            <span class="card-tag">Role: UI developer · JS · Accessibility</span>
           </article>
-          <article class="work-card work-card--mint">
-            <p class="card-index">02 / Web Experience</p>
+          <article class="work-card work-card--mint" data-reveal>
+            <p class="card-index">02 / Fictional case study</p>
             <h3>Slow Sunday</h3>
-            <p>일상의 속도를 낮추는 큐레이션 페이지 콘셉트.</p>
-            <span class="card-tag">Interaction · Motion</span>
+            <p>주말 콘텐츠를 천천히 발견하도록 카드형 큐레이션과 읽기 흐름을 설계한 가상 웹 경험입니다.</p>
+            <span class="card-tag">Role: Frontend · CSS motion · Responsive</span>
           </article>
-          <article class="work-card work-card--lilac">
-            <p class="card-index">03 / Playground</p>
+          <article class="work-card work-card--lilac" data-reveal>
+            <p class="card-index">03 / Fictional playground</p>
             <h3>Tiny Loops</h3>
-            <p>작은 실험을 즐거운 인터랙션으로 바꾸는 공간.</p>
-            <span class="card-tag">Creative Coding</span>
+            <p>작은 코드 실험을 짧은 인터랙션으로 공개하고 피드백을 모으는 가상 크리에이티브 코딩 공간입니다.</p>
+            <span class="card-tag">Role: Prototyping · DOM · Interaction</span>
           </article>
         </div>
       </section>
 
-      <section class="profile-strip section-shell" aria-labelledby="profile-title">
+      <section class="profile-strip section-shell" aria-labelledby="profile-title" data-reveal>
         <div>
           <p class="eyebrow">A little more</p>
           <h2 id="profile-title">Curious by default,<br>careful by craft.</h2>
@@ -67,44 +72,44 @@
         </div>
       </section>
 
-      <section id="contact" class="contact-section section-shell" aria-labelledby="contact-title">
+      <section id="contact" class="contact-section section-shell" aria-labelledby="contact-title" data-reveal>
         <div>
           <p class="eyebrow">Get in touch</p>
           <h2 id="contact-title">Let’s make<br>something useful.</h2>
         </div>
         <div class="profile-copy">
-          <p>새로운 제품과 인터랙션을 함께 고민합니다. 아래 연락처는 가상 프로필용 예시입니다.</p>
+          <p>새로운 제품과 인터랙션을 함께 고민합니다. 아래 내용은 가상 프로필용 예시입니다.</p>
+          <div class="contact-details">
+            <p><strong>협업 분야</strong><br>Web products · Design systems · Creative coding</p>
+            <p><strong>응답 시간</strong><br>가상 프로필 기준, 영업일 1~2일 이내</p>
+          </div>
           <a class="text-link" href="mailto:hello@example.com">hello@example.com ↗</a>
         </div>
       </section>
 
-      <section id="games" class="game-placeholder section-shell" aria-labelledby="games-title">
+      <section id="games" class="game-placeholder section-shell" aria-labelledby="games-title" data-reveal>
         <div>
           <p class="eyebrow">A small break</p>
-          <h2 id="games-title">Worm Run</h2>
-          <p>귀여운 지렁이를 움직여 먹이를 모으고 오래 살아남으세요. 벽이나 몸에 부딪히면 게임이 끝납니다.</p>
+          <h2 id="games-title">Dino Run</h2>
+          <p>공룡이 자동으로 달립니다. 선인장과 익룡을 피하며 이동 거리를 기록하세요.</p>
         </div>
         <div class="game-panel">
           <div class="game-scoreboard" aria-label="게임 점수">
             <span>Score <strong id="score">0</strong></span>
             <span>Best <strong id="best-score">0</strong></span>
           </div>
-          <div id="game-board" class="game-board" role="application" aria-label="지렁이 게임 보드"></div>
-          <div class="game-status" role="status">Game 준비 중 · 스페이스바 또는 터치로 점프</div>
+          <div id="game-board" class="game-board" role="application" aria-label="공룡 장애물 게임"></div>
+          <div class="game-status" role="status">Ready · Space 또는 ↑로 시작</div>
           <div class="game-controls" aria-label="게임 조작">
             <button type="button" data-game-action="start">Start</button>
             <button type="button" data-game-action="pause">Pause</button>
             <button type="button" data-game-action="restart">Restart</button>
           </div>
-          <div class="direction-controls" aria-label="지렁이 방향 버튼">
-            <button type="button" data-direction="up" aria-label="위로 이동">↑</button>
-            <div>
-              <button type="button" data-direction="left" aria-label="왼쪽으로 이동">←</button>
-              <button type="button" data-direction="down" aria-label="아래로 이동">↓</button>
-              <button type="button" data-direction="right" aria-label="오른쪽으로 이동">→</button>
-            </div>
+          <div class="dino-controls" aria-label="공룡 게임 모바일 조작">
+            <button type="button" data-dino-action="jump" aria-label="점프">↑ Jump</button>
+            <button type="button" data-dino-action="duck" aria-label="숙이기">↓ Duck</button>
           </div>
-          <p class="game-hint">방향키·WASD·모바일 버튼으로 이동 · P로 일시정지</p>
+          <p class="game-hint">Space / ↑ 점프 · ↓ 숙이기 · Alt 일시정지 · 게임 오버 후 Space 재시작</p>
         </div>
       </section>
     </main>
