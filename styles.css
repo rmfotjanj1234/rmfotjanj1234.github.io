@@ -1,9 +1,10 @@
 :root {
   --ink: #24231f;
   --muted: #76736b;
-  --paper: #f8f6f1;
-  --line: rgba(36, 35, 31, .14);
-  --accent: #ff6b4a;
+  --paper: #fffafd;
+  --line: rgba(36, 35, 31, .12);
+  --accent: #e84d73;
+  --accent-warm: #ff8b55;
   --space: clamp(1.25rem, 3vw, 3rem);
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
@@ -12,7 +13,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; line-height: 1.5; }
+body { background: linear-gradient(180deg, #fffafd 0%, var(--paper) 42%, #fff8f2 100%); margin: 0; min-width: 320px; line-height: 1.5; }
 a { color: inherit; }
 
 .site-header {
@@ -36,8 +37,8 @@ nav a:hover, nav a:focus-visible, .text-link:hover, .text-link:focus-visible { c
 
 .section-shell { margin: 0 auto; max-width: 1180px; padding-left: var(--space); padding-right: var(--space); }
 .hero { min-height: min(720px, 82vh); padding-bottom: 7rem; padding-top: 7rem; }
-.profile-card { align-items: center; display: flex; gap: .75rem; margin-bottom: 4rem; max-width: 32rem; }
-.profile-avatar { align-items: center; background: var(--accent); border-radius: 50%; color: var(--paper); display: inline-flex; font-size: .8rem; font-weight: 800; height: 2.8rem; justify-content: center; width: 2.8rem; }
+.profile-card { align-items: center; background: rgba(255, 255, 255, .72); border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: 0 .8rem 2rem rgba(232, 77, 115, .08); display: flex; gap: .75rem; margin-bottom: 4rem; max-width: 32rem; padding: .75rem 1rem; }
+.profile-avatar { align-items: center; background: var(--accent); border-radius: 50%; color: var(--paper); display: inline-flex; flex: 0 0 2.8rem; font-size: .75rem; font-weight: 800; height: 2.8rem; justify-content: center; letter-spacing: -.12em; line-height: 1; overflow: hidden; text-align: center; white-space: nowrap; width: 2.8rem; }
 .profile-card strong, .profile-card span { display: block; }
 .profile-card div span { color: var(--muted); font-size: .72rem; }
 .profile-badge { border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .65rem; margin-left: auto; padding: .45rem .7rem; }
@@ -51,11 +52,11 @@ h2 { font-size: clamp(2.4rem, 5vw, 5rem); margin-bottom: 2rem; }
 .text-link { border-bottom: 1px solid currentColor; display: inline-block; margin-top: 1.5rem; padding-bottom: .35rem; }
 .section-heading { align-items: end; display: flex; justify-content: space-between; }
 .work-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
-.work-card { border-radius: 1.5rem; display: flex; flex-direction: column; min-height: 21rem; padding: 1.5rem; }
+.work-card { border: 1px solid rgba(255, 255, 255, .7); border-radius: 1.5rem; box-shadow: 0 .8rem 1.8rem rgba(36, 35, 31, .06); display: flex; flex-direction: column; min-height: 21rem; padding: 1.5rem; }
 .work-card:hover { transform: translateY(-.35rem) rotate(-.5deg); }
-.work-card--sunset { background: #ffc7a9; }
-.work-card--mint { background: #b9e6d3; }
-.work-card--lilac { background: #d9c9f3; }
+.work-card--sunset { background: #ffd0bb; }
+.work-card--mint { background: #c8f0dc; }
+.work-card--lilac { background: #eadfff; }
 .card-index, .card-tag { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
 .card-index { opacity: .62; }
 .work-card h3 { font-size: clamp(1.7rem, 3vw, 2.8rem); letter-spacing: -.06em; margin: auto 0 .5rem; }
@@ -67,18 +68,20 @@ h2 { font-size: clamp(2.4rem, 5vw, 5rem); margin-bottom: 2rem; }
 .contact-details p { font-size: .82rem; }
 .contact-details strong { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
 .muted { color: var(--muted); font-size: .8rem; }
-.game-placeholder { align-items: end; background: #e9e1d4; border: 0; border-radius: 1.5rem; margin-bottom: 3rem; padding-bottom: 3rem; padding-top: 3rem; }
+.game-placeholder { align-items: end; background: #fff0eb; border: 0; border-radius: 1.5rem; box-shadow: 0 .8rem 1.8rem rgba(232, 77, 115, .08); margin-bottom: 3rem; padding-bottom: 3rem; padding-top: 3rem; }
 .game-placeholder h2 { margin-bottom: 1rem; }
 .game-panel { display: grid; gap: .8rem; }
 .game-scoreboard { display: flex; gap: 1rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
 .game-scoreboard strong { color: var(--accent); font-size: 1rem; }
 .game-board { background: linear-gradient(#cce7e6 0 64%, #f0d1ae 64%); border: .5rem solid #26251f; border-radius: 1rem; height: 15rem; max-width: 34rem; overflow: hidden; position: relative; }
+.game-board--gameover { animation: gameBoardShake .18s ease-in-out 3; }
 .game-board::after { background: rgba(36, 35, 31, .24); bottom: 1.5rem; content: ''; height: 2px; left: 0; position: absolute; right: 0; }
 .dino-sprite, .obstacle-sprite { bottom: 1.6rem; position: absolute; z-index: 1; }
 .dino-sprite { background: #5c7f63; border-radius: 45% 45% 20% 20%; height: 2.7rem; left: 12%; width: 3rem; }
 .dino-sprite::before { background: #5c7f63; border-radius: 50% 50% 20% 20%; content: ''; height: 1.8rem; position: absolute; right: -.6rem; top: -.8rem; width: 1.8rem; }
 .dino-sprite::after { background: #f8f6f1; border-radius: 50%; box-shadow: .45rem 0 #24231f; content: ''; height: .35rem; position: absolute; right: -.15rem; top: -.3rem; width: .35rem; }
 .dino-sprite--duck { height: 1.7rem; }
+.dino-sprite--gameover { animation: dinoGameoverBlink .18s steps(2, end) 3; }
 .obstacle-sprite { background: #597a5e; border-radius: .35rem .35rem 0 0; height: 2.8rem; width: 1.2rem; }
 .obstacle-sprite--bird { background: #746e9b; border-radius: 50% 50% 20% 20%; bottom: 5.3rem; height: 1rem; width: 2.8rem; }
 .game-cloud { background: rgba(255, 255, 255, .65); border-radius: 999px; height: .45rem; position: absolute; width: 3.5rem; }
@@ -90,6 +93,9 @@ h2 { font-size: clamp(2.4rem, 5vw, 5rem); margin-bottom: 2rem; }
 .dino-controls button { background: var(--paper); border: 1px solid var(--line); border-radius: .7rem; color: var(--ink); cursor: pointer; min-height: 2.75rem; padding: .7rem 1rem; touch-action: manipulation; }
 .dino-controls button:hover, .dino-controls button:focus-visible { border-color: var(--accent); color: var(--accent); }
 .game-hint { color: var(--muted); font-size: .75rem; margin: 0; }
+.game-over-overlay { align-items: center; background: rgba(255, 250, 252, .76); color: #e44d68; display: flex; font-size: clamp(1.4rem, 5vw, 2.5rem); font-weight: 900; inset: 0; justify-content: center; letter-spacing: .12em; position: absolute; z-index: 3; }
+@keyframes dinoGameoverBlink { 50% { opacity: .15; } }
+@keyframes gameBoardShake { 25% { transform: translateX(-.25rem); } 75% { transform: translateX(.25rem); } }
 .js-reveal { opacity: 0; transform: translateY(1.5rem); transition: opacity .6s ease, transform .6s ease; }
 .js-reveal.is-visible { opacity: 1; transform: none; }
 .site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding-bottom: 2rem; padding-top: 2rem; }
@@ -113,4 +119,5 @@ h2 { font-size: clamp(2.4rem, 5vw, 5rem); margin-bottom: 2rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .game-board--gameover, .dino-sprite--gameover { animation: none; }
 }

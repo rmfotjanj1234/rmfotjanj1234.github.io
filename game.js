@@ -13,8 +13,8 @@
       this.random = options.random || Math.random;
       this.storage = options.storage || null;
       this.highScoreKey = options.highScoreKey || 'choi-jeongin-dino-best';
-      this.baseSpeed = options.baseSpeed || 5;
-      this.maxSpeed = options.maxSpeed || 14;
+      this.baseSpeed = options.baseSpeed || 7;
+      this.maxSpeed = options.maxSpeed || 19.6;
       this.reset();
       this.bestScore = this.readBestScore();
     }
@@ -130,13 +130,14 @@
 
     function render() {
       board.replaceChildren();
+      board.classList.toggle('game-board--gameover', engine.state === STATES.gameover);
       const cloud = document.createElement('span');
       cloud.className = 'game-cloud';
       cloud.style.left = `${(engine.tickCount * .08) % 85}%`;
       cloud.style.top = '18%';
       board.appendChild(cloud);
       dino = document.createElement('span');
-      dino.className = `dino-sprite${engine.ducking ? ' dino-sprite--duck' : ''}`;
+      dino.className = `dino-sprite${engine.ducking ? ' dino-sprite--duck' : ''}${engine.state === STATES.gameover ? ' dino-sprite--gameover' : ''}`;
       dino.style.bottom = `${1.6 + engine.playerY * 1.6}rem`;
       board.appendChild(dino);
       engine.obstacles.forEach((obstacle) => {
@@ -145,6 +146,13 @@
         item.style.left = `${obstacle.x}%`;
         board.appendChild(item);
       });
+      if (engine.state === STATES.gameover) {
+        const overlay = document.createElement('span');
+        overlay.className = 'game-over-overlay';
+        overlay.setAttribute('aria-hidden', 'true');
+        overlay.textContent = 'GAME OVER';
+        board.appendChild(overlay);
+      }
       if (score) score.textContent = String(engine.score);
       if (bestScore) bestScore.textContent = String(engine.bestScore);
       if (status) status.textContent = ({ idle: 'Ready · Space 또는 ↑로 시작', running: 'Running · ↓ 숙이기 · Alt 일시정지', paused: 'Paused · Alt로 계속하기', gameover: 'Game over · Space로 다시 시작' })[engine.state];
